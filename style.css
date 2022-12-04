@@ -1,0 +1,138 @@
+.color1 {color: #207fd8;}
+.color2 {color: #20a8d8;}
+.color3 {color: #20dbd8;}
+.color4 {color: #8de9e7;}
+.color5 {color: #f8efed;}
+
+
+
+* {
+    box-sizing: border-box
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.6;
+    color: #666;
+    background: #F6F6F6;
+  }
+
+#root {
+    /* max-width: 1200px; */
+    margin: 0px;
+    /* background-color: #20dbd8; */
+}
+
+h2 {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 10px;
+
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1rem;
+    /* border: 1px solid gray; */
+    /* background-color: #20a8d8; */
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+p {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* color: #f8efed; */
+}
+
+@media screen and (min-width: 600px) {
+    .card {
+        flex: 1 1 cal(50% - 2rem);
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .card {
+        flex: 1 1 cal(33% - 2rem);
+    }
+}
+
+.card:nth-child(2n) h2 {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  }
+  
+  .card:nth-child(4n) h2 {
+    background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+  }
+  
+  .card:nth-child(5n) h2 {
+    background-image: linear-gradient(120deg, #ffc3a0 0%, #ffafbd 100%);
+  }
+
+
+  .loader {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+
+}
+
+
+.loader.show {
+    opacity: 1;
+}
+
+.loader div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #32d573;
+    animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.loader div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+
+.loader div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+
+.loader div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+
+@keyframes loader {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%,
+    100% {
+        top: 24px;
+        height: 32px;
+    }
+}
