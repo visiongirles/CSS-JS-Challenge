@@ -7,12 +7,30 @@ container.setAttribute('class', 'container');
 
 app.append(container);
 
-const url = `https://api.thecatapi.com/v1/images/search?limit=3&api_key=${apiKey}`;
+const url = `https://api.thecatapi.com/v1/images/search?limit=15&api_key=${apiKey}`;
+
+
+const loader = document.querySelector('.loader');
+
+const hideLoader = () => {
+    loader.classList.remove('show');
+};
+ 
+const showLoader = () => {
+    loader.classList.add('show');
+};
 
 function fetchData() {
+    console.log('TIT2');
+
     showLoader();
+    console.log('TIT');
+
     fetch(url)
+
     .then(function(response) {
+        console.log('TIT2');
+
     return response.json();
 })
 .then(function(data) {
@@ -31,6 +49,7 @@ function fetchData() {
 
 
 function loadImages(data) {
+
         data.forEach(catElement => {
             console.log(catElement.url);
 
@@ -52,19 +71,11 @@ function loadImages(data) {
         hideLoader();
 }
 
+fetchData();
 
 window.addEventListener('scroll', ()=> {
     if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
         fetchData();
     }
 })
-const loader = document.querySelector('.loader');
-
-const hideLoader = () => {
-    loader.classList.remove('show');
-};
- 
-const showLoader = () => {
-    loader.classList.add('show');
-};
 
